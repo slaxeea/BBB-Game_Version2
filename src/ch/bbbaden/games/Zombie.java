@@ -332,7 +332,7 @@ public class Zombie implements GameObject {
             ROYAL_PURPLE,
             RUBY,
             RUSSET,
-            RUST,};
+            RUST};
         Random rand = new Random();
         int index = rand.nextInt(cols.length);
         index = index < 0 ? index++ : index;

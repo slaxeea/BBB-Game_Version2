@@ -70,26 +70,30 @@ public class Player implements GameObject {
     }
 
     public void update(WSwingConsoleInterface csi, Player player, List<GameObject> gm) {
-        points++;
+        if (health <= 0) {
+            isDead = true;
+        } else {
+            points++;
 
-        // Look for Zombies
-        Zombie z = new Zombie(111, 111);
-        for (GameObject gam : gm) {
+            // Look for Zombies
+            Zombie z = new Zombie(111, 111);
+            for (GameObject gam : gm) {
 
-            if (z.getClass() == gam.getClass()) {
-                if (gam.getX() == playerX || gam.getY() == playerY) {
-                    health--;
+                if (z.getClass() == gam.getClass()) {
+                    if (gam.getX() == playerX || gam.getY() == playerY) {
+                        health--;
+                    }
                 }
             }
-        }
 
-        // Look for Traps
-        Medkit m = new Medkit(111, 111);
-        for (GameObject gam : gm) {
+            // Look for Traps
+            Medkit m = new Medkit(111, 111);
+            for (GameObject gam : gm) {
 
-            if (m.getClass() == gam.getClass()) {
-                if (gam.getX() == playerX || gam.getY() == playerY) {
-                    health -= 10;
+                if (m.getClass() == gam.getClass()) {
+                    if (gam.getX() == playerX || gam.getY() == playerY) {
+                        health -= 10;
+                    }
                 }
             }
         }
