@@ -18,12 +18,13 @@ public class LibBasicsEvents {
     }
 
     public void run() {
+        boolean isDead = false;
 
         // Draw static part
         setupGameBoard();
         setupGameObjects();
 
-        while (true) {
+        while (!isDead) {
             csi.restore();
 
             for (GameObject gm : gameObjects) {
