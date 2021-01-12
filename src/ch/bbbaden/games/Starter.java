@@ -4,11 +4,11 @@ package ch.bbbaden.games;
 
 /**
  *
- * @author Michael Schneider (michael.schneider@bbbaden.ch)
+ * @author simon
  */
 public class Starter {
 
     public static void main(String[] args) {
-       new LibBasicsEvents().run();
+        new LibBasicsEvents().run();
     }
 }
